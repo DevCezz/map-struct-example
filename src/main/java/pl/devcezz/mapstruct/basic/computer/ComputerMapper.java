@@ -1,4 +1,4 @@
-package pl.devcezz.mapstruct.computer;
+package pl.devcezz.mapstruct.basic.computer;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

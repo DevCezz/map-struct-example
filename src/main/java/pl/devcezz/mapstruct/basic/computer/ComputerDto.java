@@ -1,4 +1,4 @@
-package pl.devcezz.mapstruct.computer;
+package pl.devcezz.mapstruct.basic.computer;
 
 public class ComputerDto {
 

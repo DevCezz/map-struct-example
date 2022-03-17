@@ -1,6 +1,10 @@
-package pl.devcezz.mapstruct.wardrobe;
+package pl.devcezz.mapstruct.basic.wardrobe;
 
 import org.junit.jupiter.api.Test;
+import pl.devcezz.mapstruct.basic.wardrobe.AmericanWardrobe;
+import pl.devcezz.mapstruct.basic.wardrobe.BritishWardrobe;
+import pl.devcezz.mapstruct.basic.wardrobe.Color;
+import pl.devcezz.mapstruct.basic.wardrobe.WardrobeMapper;
 
 import java.util.List;
 import java.util.Map;

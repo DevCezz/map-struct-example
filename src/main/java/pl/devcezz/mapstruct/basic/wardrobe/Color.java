@@ -1,4 +1,4 @@
-package pl.devcezz.mapstruct.wardrobe;
+package pl.devcezz.mapstruct.basic.wardrobe;
 
 public enum Color {
 
