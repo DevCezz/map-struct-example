@@ -1,10 +1,6 @@
 package pl.devcezz.mapstruct.basic.computer;
 
 import org.junit.jupiter.api.Test;
-import pl.devcezz.mapstruct.basic.computer.Computer;
-import pl.devcezz.mapstruct.basic.computer.ComputerDto;
-import pl.devcezz.mapstruct.basic.computer.ComputerMapper;
-import pl.devcezz.mapstruct.basic.computer.ProcessorProducer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
