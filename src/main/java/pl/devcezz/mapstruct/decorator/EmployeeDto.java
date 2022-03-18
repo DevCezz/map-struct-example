@@ -1,10 +1,13 @@
 package pl.devcezz.mapstruct.decorator;
 
+import lombok.Builder;
+
+@Builder(toBuilder = true)
 public class EmployeeDto {
 
-    private final String firstname;
-    private final String surname;
-    private final String salaryWithEuro;
+    private String firstname;
+    private String surname;
+    private String salaryWithEuro;
 
     public EmployeeDto(String firstname, String surname, String salaryWithEuro) {
         this.firstname = firstname;

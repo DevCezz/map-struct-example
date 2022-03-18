@@ -3,6 +3,7 @@ package pl.devcezz.mapstruct.decorator;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -28,13 +29,14 @@ public class EmployeeMapperTest {
         EmployeeDto dto = new EmployeeDto(
                 "Albert",
                 "Poniatowski",
-                "9020€"
+                "9020.00€"
         );
 
         Employee result = EmployeeMapper.INSTANCE.map(dto);
 
         assertThat(result.getFirstname()).isEqualTo("Albert");
         assertThat(result.getSurname()).isEqualTo("Poniatowski");
-        assertThat(result.getSalary()).isEqualTo(BigDecimal.valueOf(9020.00));
+        assertThat(result.getSalary())
+                .isEqualTo(BigDecimal.valueOf(9020.00).setScale(2, RoundingMode.HALF_UP));
     }
 }

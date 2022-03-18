@@ -1,12 +1,15 @@
 package pl.devcezz.mapstruct.decorator;
 
+import lombok.Builder;
+
 import java.math.BigDecimal;
 
+@Builder(toBuilder = true)
 public class Employee {
 
-    private final String firstname;
-    private final String surname;
-    private final BigDecimal salary;
+    private String firstname;
+    private String surname;
+    private BigDecimal salary;
 
     public Employee(String firstname, String surname, BigDecimal salary) {
         this.firstname = firstname;
