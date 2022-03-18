@@ -1,9 +1,10 @@
 package pl.devcezz.mapstruct.decorator;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -12,7 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class EmployeeMapperIntTest {
 
-    @Autowired
+    @Inject
+    @Named
     EmployeeMapper employeeMapper;
 
     @Test
