@@ -1,21 +1,22 @@
 package pl.devcezz.mapstruct.decorator;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class DefaultEmployeeDecoratorMapper implements EmployeeMapper {
+public abstract class SpringEmployeeDecoratorMapper implements EmployeeMapper {
 
     private static final String SALARY_FORMAT = "%1$.2f€";
     private static final String SALARY_REGEX = "\\d+\\.\\d{2}";
 
-    private final EmployeeMapper delegate;
-
-    public DefaultEmployeeDecoratorMapper(EmployeeMapper delegate) {
-        this.delegate = delegate;
-    }
+    @Autowired
+    @Qualifier("delegate")
+    private EmployeeMapper delegate;
 
     @Override
     public EmployeeDto map(Employee employee) {

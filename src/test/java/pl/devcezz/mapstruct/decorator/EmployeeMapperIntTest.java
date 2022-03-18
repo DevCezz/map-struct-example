@@ -1,13 +1,19 @@
 package pl.devcezz.mapstruct.decorator;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class EmployeeMapperTest {
+@SpringBootTest
+public class EmployeeMapperIntTest {
+
+    @Autowired
+    EmployeeMapper employeeMapper;
 
     @Test
     void should_map_employee_to_employee_dto() {
@@ -17,7 +23,7 @@ public class EmployeeMapperTest {
                 BigDecimal.valueOf(2800.00)
         );
 
-        EmployeeDto result = EmployeeMapper.INSTANCE.map(employee);
+        EmployeeDto result = employeeMapper.map(employee);
 
         assertThat(result.getFirstname()).isEqualTo("Jan");
         assertThat(result.getSurname()).isEqualTo("Kowalski");
@@ -32,7 +38,7 @@ public class EmployeeMapperTest {
                 "9020.00€"
         );
 
-        Employee result = EmployeeMapper.INSTANCE.map(dto);
+        Employee result = employeeMapper.map(dto);
 
         assertThat(result.getFirstname()).isEqualTo("Albert");
         assertThat(result.getSurname()).isEqualTo("Poniatowski");
